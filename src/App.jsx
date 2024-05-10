@@ -28,6 +28,30 @@ function App(props) {
   c.address.city = "london";
   console.log("c.address.city", c.address.city); // london
   console.log("a.address.city", a.address.city); // busan
+
+  // 연습 : 깊은 복사
+  const d = {
+    company: {
+      name: "apple",
+      location: "us",
+    },
+    name: "iphone",
+    price: 300,
+  };
+
+  // todo : d 객체를 e 객체로 깊은 복사
+  const { ...e } = d;
+  const { ...company1 } = d.company;
+  e.company = company1;
+  console.log(e);
+
+  e.name = "galaxy";
+  e.company.name = "samsung";
+  console.log("d.name", d.name); // iphone
+  console.log("d.company.name", d.company.name); // apple
+  console.log("e.name", e.name); // galaxy
+  console.log("e.company.name", e.company.name); // samsung
+
   return <div></div>;
 }
 
