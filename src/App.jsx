@@ -17,6 +17,9 @@ function MyContainer() {
   return <MySection />;
 }
 
+// context -> 과용하지 말 것
+// 1. prop 전달부터 시작할 것
+// 2. 주로 테마, 현재 계정정보, 라우팅 등에서 사용
 function App(props) {
   const [message, setMessage] = useState("");
   return (
