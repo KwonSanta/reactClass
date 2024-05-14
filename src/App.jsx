@@ -1,39 +1,7 @@
-import React, { createContext, useContext, useState } from "react"; // step1 : create the context
+import React from "react";
 
-// step1 : Create the context
-const MessageContext = createContext("");
-
-function MyBox() {
-  // step2 : Use the context
-  const message = useContext(MessageContext);
-  return <div>{message}</div>;
-}
-
-function MySection() {
-  return <MyBox />;
-}
-
-function MyContainer() {
-  return <MySection />;
-}
-
-// context -> 과용하지 말 것
-// 1. prop 전달부터 시작할 것
-// 2. 주로 테마, 현재 계정정보, 라우팅 등에서 사용
 function App(props) {
-  const [message, setMessage] = useState("");
-  return (
-    <div>
-      <input type="text" onChange={(e) => setMessage(e.target.value)} />
-      <p>{message}</p>
-      <hr />
-
-      {/* step3 : Provide the context */}
-      <MessageContext.Provider value={message}>
-        <MyContainer />
-      </MessageContext.Provider>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;
