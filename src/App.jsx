@@ -14,10 +14,21 @@ function App(props) {
     axios.post("/api/someurl");
   }
 
+  function handleClickButton3() {
+    axios.get("/api/someurl2");
+  }
+
+  function handleClickButton4() {
+    axios.post("/api/someurl2");
+  }
+
   return (
     <div>
       <button onClick={handleClickButton1}>get 요청</button>
       <button onClick={handleClickButton2}>post 요청</button>
+      {/* todo : /api/someurl2 get, post 요청 보내기 */}
+      <button onClick={handleClickButton3}>get 요청2</button>
+      <button onClick={handleClickButton4}>post 요청2</button>
     </div>
   );
 }
