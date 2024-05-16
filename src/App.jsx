@@ -19,6 +19,10 @@ function App(props) {
     axios.get("/api/main42/sub3").then((param) => console.log(param.data));
   }
 
+  function handleClick4() {
+    axios.get("/api/main42/sub4").then((param) => console.log(param.data));
+  }
+
   return (
     <div>
       <button onClick={handleClick1}>응답 받기 1</button>
@@ -27,6 +31,9 @@ function App(props) {
       <button onClick={handleClick2}>응답 받기 2</button>
       <br />
       <button onClick={handleClick3}>JSON 응답 받기 3 : 각 객체</button>
+      <br />
+      {/* /api/main42/sub4 get 요청 후 -> 응답 받은 내용 콘솔에 출력 */}
+      <button onClick={handleClick4}>JSON 응답 받기 4</button>
     </div>
   );
 }
