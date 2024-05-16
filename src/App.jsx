@@ -22,6 +22,18 @@ function App(props) {
     axios.post("/api/someurl2");
   }
 
+  function handleClickButton5() {
+    // 간단한 것들은 직접 url을 명시해줘도 됨 (ex. /api/someurl3?id=xx&name=xx)
+    const params = new URLSearchParams();
+    params.append("id", 3);
+    params.append("name", "son");
+    params.append("email", "son@son.com");
+    // 방법 1
+    // axios.get("/api/someurl3?" + params);
+    // 방법 2
+    axios.get(`/api/someurl3?${params}`);
+  }
+
   return (
     <div>
       <button onClick={handleClickButton1}>get 요청</button>
@@ -29,6 +41,8 @@ function App(props) {
       {/* todo : /api/someurl2 get, post 요청 보내기 */}
       <button onClick={handleClickButton3}>get 요청2</button>
       <button onClick={handleClickButton4}>post 요청2</button>
+
+      <button onClick={handleClickButton5}>get 요청 with queryString</button>
     </div>
   );
 }
