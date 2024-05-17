@@ -18,6 +18,9 @@ function SpringRoot() {
         }}
       >
         <div>
+          <Link to={"/spring"}>HOME</Link>
+        </div>
+        <div>
           <Link to="/spring/learn">LEARN</Link>
         </div>
         <div>
@@ -39,6 +42,7 @@ const router = createBrowserRouter([
     path: "spring",
     element: <SpringRoot />,
     children: [
+      { index: true, element: <div>spring main page</div> },
       { path: "api", element: <div>api page</div> },
       { path: "doc", element: <div>doc page</div> },
       { path: "learn", element: <div>learn page</div> },
